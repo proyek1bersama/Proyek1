@@ -87,7 +87,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Beranda</a>
+            <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="keranjang.html" title="Keranjang">
@@ -95,7 +95,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html" title="Login">
+            <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
               <i class="bi bi-person-circle fs-5"></i>
             </a>
           </li>

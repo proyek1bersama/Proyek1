@@ -99,7 +99,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Beranda</a>
+            <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="keranjang.html" title="Keranjang">

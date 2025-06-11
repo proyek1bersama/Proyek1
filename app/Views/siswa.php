@@ -1,1 +1,0 @@
-<h1>aku adalah halaman siswa</h1>

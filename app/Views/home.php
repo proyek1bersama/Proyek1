@@ -579,7 +579,11 @@
         </div>
       </div>
     </section>
-
+    
+<!-- footer -->
+  <footer class="text-center py-3 mt-5 shadow-sm">
+    <small>&copy; 2025 Creative Cell. All rights reserved.</small>
+  </footer>
     
     <script>
   document.addEventListener("DOMContentLoaded", function () {

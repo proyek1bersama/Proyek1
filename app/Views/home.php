@@ -582,10 +582,7 @@
       </div>
     </section>
 
-    <footer class="text-center py-3">
-      <p>&copy; 2023 Creative Cell. All rights reserved.</p>
-    </footer>
-
+    
     <script>
   document.addEventListener("DOMContentLoaded", function () {
     // ========================

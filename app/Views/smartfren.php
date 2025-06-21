@@ -1,41 +1,93 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Voucher XL - Creative Cell</title>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-   <style>
+  <style>
     body {
       background: linear-gradient(to right, #a83252, #1a1a2e);
       color: white;
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-     .navbar {
+    .navbar {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       height: 70px;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    .navbar-brand,
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
     .nav-link {
+      position: relative;
       color: #fff !important;
-      font-weight: 50px;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    .navbar .nav-link:hover {
+    .nav-link:hover {
       transform: translateY(-3px);
-      color: #ffffff;
-      /* warna putih cerah biar kontras */
       text-shadow:
         0 2px 4px rgba(0, 0, 0, 0.7),
         0 4px 8px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.5);
     }
+
+    .hero-section {
+      padding-top: 100px;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      .navbar-collapse {
+        background-color: white;
+        /* ungu pastel transparan */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 70px;
+        right: 16px;
+        width: 180px;
+        padding: 10px 14px;
+        z-index: 999;
+      }
+
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-link {
+        color: #222 !important;
+        /* hitam keabu, biar kontras */
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 0;
+        width: 100%;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        /* efek hover lembut */
+        text-shadow: none;
+        transform: none;
+      }
+    }
+
     .logo-layanan {
       max-width: 80px;
     }
@@ -69,6 +121,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- navbar -->
@@ -87,15 +140,18 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
           <li class="nav-item">
-            <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
+              <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="keranjang.html" title="Keranjang">
+            <a class="nav-link" href="<?= base_url() ?>#layanan">Layanan</a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
               <i class="bi bi-cart3 fs-5"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
+                <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
               <i class="bi bi-person-circle fs-5"></i>
             </a>
           </li>
@@ -109,37 +165,111 @@
     <h2 class="mb-4 fw-semibold text-white">Daftar Voucher Smartfren</h2>
     <div class="row">
 
-      <!-- voucher 1 -->
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
-            <img src="images/logo smartfren.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">XL 10.000</h5>
-            <p class="card-text">Kuota 1GB, masa aktif 7 hari.</p>
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 6.500</h5>
+            <p class="card-text">Kuota 1 GB, masa aktif 3 hari.</p>
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>
       </div>
 
-      <!-- voucher 2 -->
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
-            <img src="images/logo smartfren.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">XL 25.000</h5>
-            <p class="card-text">Kuota 3GB, masa aktif 15 hari.</p>
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 9.500</h5>
+            <p class="card-text">Kuota 2 GB, masa aktif 3 hari.</p>
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>
       </div>
 
-      <!-- voucher 3 -->
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
-            <img src="images/logo smartfren.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">XL 50.000</h5>
-            <p class="card-text">Kuota 7GB, masa aktif 30 hari.</p>
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 14.000</h5>
+            <p class="card-text">Kuota 3 GB, masa aktif 5 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 17.000</h5>
+            <p class="card-text">Kuota 10 GB, masa aktif 3 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 11.500</h5>
+            <p class="card-text">Kuota 2 GB, masa aktif 7 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 14.000</h5>
+            <p class="card-text">Kuota 4 + 2 GB, masa aktif 7 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 19.000</h5>
+            <p class="card-text">Kuota 4 GB, masa aktif 14 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 42.000</h5>
+            <p class="card-text">Kuota 6 GB non stop, masa aktif 30 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 29.000</h5>
+            <p class="card-text">Kuota unlimited 2 GB, masa aktif 7 hari.</p>
+            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-sm card-voucher h-100 text-center">
+          <div class="card-body">
+            <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
+            <h5 class="card-title">Smartfren 93.000</h5>
+            <p class="card-text">Kuota unlimited 1 + 1 GB, masa aktif 28 hari.</p>
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>
@@ -153,6 +283,29 @@
     <small>&copy; 2025 Creative Cell. All rights reserved.</small>
   </footer>
 
+  <script>
+  document.querySelectorAll('.btn-tambah').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = button.closest('.card');
+      const title = card.querySelector('.card-title').innerText;
+      const desc = card.querySelector('.card-text').innerText;
+      const image = card.querySelector('img').getAttribute('src');
+
+      // ambil keranjang dari localStorage
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+
+      // tambahkan produk ke keranjang
+      keranjang.push({ title, desc, image });
+
+      // simpan ulang ke localStorage
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+
+      alert('Produk berhasil ditambahkan ke keranjang!');
+    });
+  });
+</script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

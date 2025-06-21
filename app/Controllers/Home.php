@@ -14,6 +14,11 @@ class Home extends BaseController
         return view('home');
     }
 
+     public function keranjang()
+    {
+        return view('keranjang');
+    }
+
     public function login()
     {
         return view('login');

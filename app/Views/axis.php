@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,28 +15,79 @@
       font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
-     .navbar {
+    .navbar {
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       height: 70px;
+      background-color: rgba(0, 0, 0, 0.4);
     }
 
-    .navbar-brand,
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+
     .nav-link {
+      position: relative;
       color: #fff !important;
-      font-weight: 50px;
-      font-size: 20px;
+      font-weight: 500;
+      font-size: 18px;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      display: inline-block;
     }
 
-    .navbar .nav-link:hover {
+    .nav-link:hover {
       transform: translateY(-3px);
-      color: #ffffff;
-      /* warna putih cerah biar kontras */
       text-shadow:
         0 2px 4px rgba(0, 0, 0, 0.7),
         0 4px 8px rgba(0, 0, 0, 0.6),
         0 6px 12px rgba(0, 0, 0, 0.5);
     }
+
+    .hero-section {
+      padding-top: 100px;
+    }
+
+    /* RESPONSIVE NAV */
+    @media (max-width: 768px) {
+      .navbar-collapse {
+        background-color: white;
+        /* ungu pastel transparan */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 70px;
+        right: 16px;
+        width: 180px;
+        padding: 10px 14px;
+        z-index: 999;
+      }
+
+      .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-link {
+        color: #222 !important;
+        /* hitam keabu, biar kontras */
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 0;
+        width: 100%;
+        border-radius: 6px;
+        transition: background-color 0.2s ease;
+      }
+
+      .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        /* efek hover lembut */
+        text-shadow: none;
+        transform: none;
+      }
+    }
+    
     .logo-layanan {
       max-width: 80px;
     }
@@ -69,6 +121,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- navbar -->
@@ -87,15 +140,18 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
           <li class="nav-item">
-            <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
+              <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="keranjang.html" title="Keranjang">
+            <a class="nav-link" href="<?= base_url() ?>#layanan">Layanan</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
               <i class="bi bi-cart3 fs-5"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
+                <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
               <i class="bi bi-person-circle fs-5"></i>
             </a>
           </li>
@@ -336,6 +392,30 @@
     <small>&copy; 2025 Creative Cell. All rights reserved.</small>
   </footer>
 
+  <script>
+  document.querySelectorAll('.btn-tambah').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = button.closest('.card');
+      const title = card.querySelector('.card-title').innerText;
+      const desc = card.querySelector('.card-text').innerText;
+      const image = card.querySelector('img').getAttribute('src');
+
+      // ambil keranjang dari localStorage
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+
+      // tambahkan produk ke keranjang
+      keranjang.push({ title, desc, image });
+
+      // simpan ulang ke localStorage
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+
+      alert('Produk berhasil ditambahkan ke keranjang!');
+    });
+  });
+</script>
+
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -7,8 +7,18 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::home');
-$routes->get('login', 'Home::login');
-$routes->get('register', 'Home::register');
+
+$routes->get('login', 'Login::index');
+$routes->post('login/auth', 'Login::auth');
+$routes->get('logout', 'Login::logout');
+
+
+$routes->get('register', 'Register::index'); // <--- diarahkan ke Register controller
+$routes->post('register/save', 'Register::save'); // <--- untuk proses daftar
+
+$routes->get('keranjang', 'Keranjang::index');
+
+
 $routes->get('xl', 'Home::xl');
 $routes->get('axis', 'Home::axis');
 $routes->get('indosat', 'Home::indosat');

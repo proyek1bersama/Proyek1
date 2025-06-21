@@ -164,70 +164,46 @@
             </div>
   </section>
 
- <section id="kontak" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Hubungi Kami</h2>
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <form>
-            <div class="mb-3 kontak-slide-left" id="anim-nama">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-right" id="anim-email">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-left" id="anim-pesan">
-              <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
-            </div>
-            <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
-              <button type="submit" class="btn btn-primary">Kirim</button>
-            </div>
-          </form>
+    <section id="kontak" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Hubungi Kami</h2>
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <form>
+              <div class="mb-3 kontak-slide-left" id="anim-nama">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
+              </div>
+              <div class="mb-3 kontak-slide-right" id="anim-email">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
+              </div>
+              <div class="mb-3 kontak-slide-left" id="anim-pesan">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
+              </div>
+              <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- footer -->
-  <footer class="text-center py-3">
-    <p>&copy; 2023 Creative Cell. All rights reserved.</p>
-     <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
-  </footer>
+    <footer class="text-center py-3">
+      <p>&copy; 2023 Creative Cell. All rights reserved.</p>
+    </footer>
 
-  <!-- script -->
-  <script>
-    // active nav saat scroll
-    window.addEventListener("scroll", function () {
-      const sections = document.querySelectorAll("section");
-      const navLinks = document.querySelectorAll(".nav-link");
-      let currentSection = "";
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionTop = sections[i].offsetTop - 300;
-        if (window.scrollY >= sectionTop) {
-          currentSection = sections[i].getAttribute("id");
-          break;
-        }
-      }
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href").includes(currentSection)) {
-          link.classList.add("active");
-        }
-      });
-    });
-
-    // animasi scroll
-    document.addEventListener("DOMContentLoaded", function () {
-      const observerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.2
-      };
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // ========================
+    // KONFIGURASI OBSERVER
+    // ========================
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+     threshold: 0
+    };
 
       const observerCallback = (entries) => {
         entries.forEach((entry) => {

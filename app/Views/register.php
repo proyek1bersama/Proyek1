@@ -164,9 +164,9 @@
     <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-5 pt-4">
       <div class="form-container">
         <h2 class="text-center mb-4">Daftar Akun</h2>
-        <form action="proses-register.php" method="post">
+        <form action="/register/save" method="post">
           <div class="mb-3">
-            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required />
+            <input type="text" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required />
           </div>
           <div class="mb-3">
             <input type="text" name="username" class="form-control" placeholder="Username" required />

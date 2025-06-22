@@ -5,9 +5,16 @@ namespace App\Controllers;
 class Home extends BaseController
 {
     public function index()
-    {
-        return view('home'); 
-    }
+{
+    $session = session();
+    $data = [
+        'nama_lengkap' => $session->get('nama_lengkap'),
+        'username' => $session->get('username'),
+    ];
+
+    return view('home', $data);
+}
+
 
     public function home()
     {

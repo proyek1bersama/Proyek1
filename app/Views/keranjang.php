@@ -9,10 +9,26 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background: linear-gradient(to right, #a83252, #1a1a2e);
       color: white;
       font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .content-wrapper {
+      flex: 1;
     }
 
     .navbar {
@@ -79,7 +95,6 @@
         transform: none;
       }
     }
-    
 
     .card-keranjang {
       background-color: rgba(255, 255, 255, 0.1);
@@ -100,69 +115,70 @@
     }
 
     footer {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color:  rgba(0, 0, 0, 0.3);
       color: #fff;
     }
-
-
-    
   </style>
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm">
+      <div class="container-fluid px-4">
+        <h2>Creative Cell</h2>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm">
-    <div class="container-fluid px-4">
-      <h2>Creative Cell</h2>
-      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav text-end">
-          <li class="nav-item">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav text-end">
+            <li class="nav-item">
               <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url() ?>#layanan">Layanan</a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
-              <i class="bi bi-cart3 fs-5"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
-              <i class="bi bi-person-circle fs-5"></i>
-            </a>
-          </li>
-        </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url() ?>#layanan">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
+                <i class="bi bi-cart3 fs-5"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
+                <i class="bi bi-person-circle fs-5"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- konten utama -->
+    <div class="content-wrapper">
+      <div class="container py-5 mt-5">
+        <h2 class="mb-4 fw-semibold text-white">Keranjang Kamu</h2>
+        <div id="keranjangContainer" class="row"></div>
+        <div id="kosongText" class="text-center text-light mt-5" style="display: none;">Keranjang kamu masih kosong.</div>
+        <div class="text-center mt-4">
+          <button id="beliSemuaBtn" class="btn btn-success px-4 fw-bold" style="display: none;">Beli Sekarang</button>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button id="checkoutBtn" class="btn btn-dark px-4 py-2">Checkout</button>
       </div>
     </div>
-  </nav>
 
-  <!-- konten keranjang -->
-  <div class="container py-5 mt-5">
-    <h2 class="mb-4 fw-semibold text-white">Keranjang Kamu</h2>
-    <div id="keranjangContainer" class="row"></div>
-    <div id="kosongText" class="text-center text-light mt-5" style="display: none;">Keranjang kamu masih kosong.</div>
-    <div class="text-center mt-4">
-  <button id="beliSemuaBtn" class="btn btn-success px-4 fw-bold" style="display: none;">Beli Sekarang</button>
-</div>
-
+    <!-- footer -->
+    <footer class="text-center py-3 mt-5 shadow-sm">
+      <p>&copy; 2025 Creative Cell. All rights reserved.</p>
+      <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
+    </footer>
   </div>
 
-  <div class="text-center mt-4">
-  <button id="checkoutBtn" class="btn btn-dark px-4 py-2">Checkout</button>
-</div>
-
-  <footer class="text-center py-3 mt-5 shadow-sm">
-    <p>&copy; 2025 Creative Cell. All rights reserved.</p>
-    <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
-  </footer>
-
+  <!-- script -->
   <script>
     const keranjangContainer = document.getElementById("keranjangContainer");
     const kosongText = document.getElementById("kosongText");
@@ -208,29 +224,24 @@
     tampilkanKeranjang();
 
     document.getElementById("checkoutBtn").addEventListener("click", () => {
-  if (keranjang.length === 0) {
-    alert("Keranjang masih kosong.");
-    return;
-  }
+      if (keranjang.length === 0) {
+        alert("Keranjang masih kosong.");
+        return;
+      }
 
-  const konfirmasi = confirm("Kamu yakin ingin membeli semua item di keranjang?");
-  if (konfirmasi) {
-    localStorage.removeItem("keranjang");
-    keranjang = [];
-    tampilkanKeranjang();
-    alert("Pembelian berhasil! Terima kasih.");
-    // kalau mau redirect ke halaman sukses, bisa pakai ini:
-    // window.location.href = "sukses.html";
-  }
-});
+      const konfirmasi = confirm("Kamu yakin ingin membeli semua item di keranjang?");
+      if (konfirmasi) {
+        localStorage.removeItem("keranjang");
+        keranjang = [];
+        tampilkanKeranjang();
+        alert("Pembelian berhasil! Terima kasih.");
+      }
+    });
 
-// Script untuk aksi tombol checkout
-  document.getElementById('checkoutBtn').addEventListener('click', function() {
-    // Contoh: munculkan alert konfirmasi
-    alert('Terima kasih! Checkout berhasil. Kami akan memproses pesanan Anda.');
-    // Nanti bisa diarahkan ke halaman pembayaran atau invoice
-  });
-
+    // Script tambahan (duplikat fungsi checkout)
+    document.getElementById('checkoutBtn').addEventListener('click', function () {
+      alert('Terima kasih! Checkout berhasil. Kami akan memproses pesanan Anda.');
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

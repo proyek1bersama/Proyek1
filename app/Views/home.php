@@ -20,27 +20,13 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav text-end">
-          <li class="nav-item"> 
-              <a class="nav-link active" href="#beranda">Beranda</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#layanan">Layanan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#kontak">Kontak</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
-              <i class="bi bi-cart3 fs-5"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
-              <i class="bi bi-person-circle fs-5"></i>
-            </a>
-          </li>
+          <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang"><i class="bi bi-cart3 fs-5"></i></a></li>
+          <li class="nav-item"><a class="nav-link" href="<?= base_url('login') ?>" title="Login"><i class="bi bi-person-circle fs-5"></i></a></li>
         </ul>
       </div>
     </div>
@@ -63,7 +49,7 @@
           </p>
         </div>
         <div class="col-md-4 text-center">
-          <img src="images/rea lucu.png" class="img-fluid animate animate-from-right" style="max-height: 200px;">
+          <img src="<?= base_url('images/rea lucu.png') ?>" class="img-fluid animate animate-from-right" style="max-height: 200px;">
         </div>
       </div>
     </div>
@@ -73,10 +59,19 @@
   <div class="slider-wrapper">
     <div id="sliderCreativeCell" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
       <div class="carousel-inner">
-        <div class="carousel-item active"><img src="images/ket1.jpg" class="d-block w-100" alt="Promo 1"></div>
-        <div class="carousel-item"><img src="images/ket2.jpg" class="d-block w-100" alt="Promo 2"></div>
-        <div class="carousel-item"><img src="images/ket3.jpg" class="d-block w-100" alt="Promo 3"></div>
-        <div class="carousel-item"><img src="images/ket4.jpg" class="d-block w-100" alt="Promo 4"></div>
+        <div class="carousel-item active">
+  <img src="<?= base_url('images/ket1.jpg') ?>" class="d-block w-100" alt="Promo 1">
+</div>
+<div class="carousel-item">
+  <img src="<?= base_url('images/ket2.jpg') ?>" class="d-block w-100" alt="Promo 2">
+</div>
+<div class="carousel-item">
+  <img src="<?= base_url('images/ket3.jpg') ?>" class="d-block w-100" alt="Promo 3">
+</div>
+<div class="carousel-item">
+  <img src="<?= base_url('images/ket4.jpg') ?>" class="d-block w-100" alt="Promo 4">
+</div>
+
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderCreativeCell" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
@@ -92,15 +87,15 @@
       <h2 class="text-center mb-5">Layanan Kami</h2>
       <div class="row">
         <div class="col-md-4 d-flex align-items-center justify-content-center mb-4 mb-md-0 animate-left">
-          <img src="images/endul.png" alt="Ilustrasi Layanan" class="custom-image img-fluid">
+         <img src="<?= base_url('images/endul.png') ?>" alt="Ilustrasi Layanan" class="custom-image img-fluid">
         </div>
         <div class="col-md-8 animate-right">
           <div class="row">
             <div class="col-md-6 mb-4">
-                     <a href="<?= base_url('xl') ?>" class="text-decoration-none text-dark">
+              <a href="<?= base_url(  'xl') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo xl.png" alt="Logo XL" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo xl.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher XL</h5>
                     <p class="card-text">Kuota Stabil & Jaringan Luas.</p>
                   </div>
@@ -108,10 +103,10 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-              <a href="<?= base_url('axis') ?>" class="text-decoration-none text-dark">
+             <a href="<?= base_url('axis') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo axis.png" alt="Logo Axis" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo axis.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Axis</h5>
                     <p class="card-text">Paket Internet & Nelpon Murah.</p>
                   </div>
@@ -119,10 +114,10 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-              <a href="<?= base_url('indosat') ?>" class="text-decoration-none text-dark">
+             <a href="<?= base_url('indosat') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo indosat.png" alt="Logo Indosat" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo indosat.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Indosat</h5>
                     <p class="card-text">Paket Internet & Nelpon Lengkap.</p>
                   </div>
@@ -130,10 +125,10 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-               <a href="<?= base_url('smartfren') ?>" class="text-decoration-none text-dark">
+                <a href="<?= base_url('smartfren') ?>" class="text-decoration-none text-dark">  
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo smartfren.png" alt="Logo Smartfren" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo smartfren.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Smartfren</h5>
                     <p class="card-text">Internet Stabil & Harga Bersahabat.</p>
                   </div>
@@ -144,7 +139,7 @@
               <a href="<?= base_url('tri') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo tri.png" alt="Logo Tri" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo tri.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Tri</h5>
                     <p class="card-text">Kuota Melimpah & Jaringan Anak Muda.</p>
                   </div>
@@ -152,10 +147,10 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-                 <a href="<?= base_url('telkomsel') ?>" class="text-decoration-none text-dark">
+                <a href="<?= base_url('telkomsel') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
-                    <img src="images/logo telkom.png" alt="Logo Telkomsel" class="mb-3 logo-layanan">
+                    <img src="<?= base_url('images/logo telkom.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
                     <h5 class="card-title">Voucher Telkomsel</h5>
                     <p class="card-text">Sinyal Kuat & Akses Cepat di Mana Saja.</p>
                   </div>
@@ -164,46 +159,70 @@
             </div>
   </section>
 
-    <section id="kontak" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Hubungi Kami</h2>
-        <div class="row">
-          <div class="col-md-6 mx-auto">
-            <form>
-              <div class="mb-3 kontak-slide-left" id="anim-nama">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
-              </div>
-              <div class="mb-3 kontak-slide-right" id="anim-email">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
-              </div>
-              <div class="mb-3 kontak-slide-left" id="anim-pesan">
-                <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
-              </div>
-              <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
-                <button type="submit" class="btn btn-primary">Kirim</button>
-            </form>
-          </div>
+ <section id="kontak" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Hubungi Kami</h2>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <form>
+            <div class="mb-3 kontak-slide-left" id="anim-nama">
+              <label for="nama" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
+            </div>
+            <div class="mb-3 kontak-slide-right" id="anim-email">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
+            </div>
+            <div class="mb-3 kontak-slide-left" id="anim-pesan">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
+            </div>
+            <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
+              <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="text-center py-3">
-      <p>&copy; 2023 Creative Cell. All rights reserved.</p>
-    </footer>
+  <!-- footer -->
+  <footer class="text-center py-3">
+    <p>&copy; 2023 Creative Cell. All rights reserved.</p>
+     <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
+  </footer>
 
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // ========================
-    // KONFIGURASI OBSERVER
-    // ========================
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-     threshold: 0
-    };
+  <!-- script -->
+  <script>
+    // active nav saat scroll
+    window.addEventListener("scroll", function () {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".nav-link");
+      let currentSection = "";
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionTop = sections[i].offsetTop - 300;
+        if (window.scrollY >= sectionTop) {
+          currentSection = sections[i].getAttribute("id");
+          break;
+        }
+      }
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(currentSection)) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // animasi scroll
+    document.addEventListener("DOMContentLoaded", function () {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.2
+      };
 
       const observerCallback = (entries) => {
         entries.forEach((entry) => {

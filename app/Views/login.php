@@ -142,15 +142,15 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav text-end">
             <li class="nav-item">
-                   <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
+              <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
             </li>
             <li class="nav-item">
-                    <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
+              <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
                 <i class="bi bi-cart3 fs-5"></i>
               </a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
+              <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
                 <i class="bi bi-person-circle fs-5"></i>
               </a>
             </li>
@@ -163,7 +163,15 @@
     <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-5 pt-4">
       <div class="form-container">
         <h2 class="text-center mb-4">Login</h2>
-        <form action="<?= base_url('login/auth'); ?>" method="post">
+
+        <!-- ✅ ALERT ERROR DITAMBAHKAN DI SINI -->
+        <?php if (session()->getFlashdata('error')) : ?>
+          <div class="alert alert-danger">
+            <?= session()->getFlashdata('error') ?>
+          </div>
+        <?php endif; ?>
+
+        <form action="/login/auth" method="post">
           <div class="mb-3">
             <input type="text" name="username" class="form-control" placeholder="Username" required />
           </div>
@@ -176,7 +184,8 @@
             <button type="submit" class="btn btn-primary">Masuk</button>
           </div>
         </form>
-          <p class="text-center mt-3">Belum punya akun? <a href="<?= base_url('register') ?>">Daftar dulu</a></p>
+
+        <p class="text-center mt-3">Belum punya akun? <a href="<?= base_url('register') ?>">Daftar dulu</a></p>
       </div>
     </main>
 

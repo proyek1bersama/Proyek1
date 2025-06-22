@@ -6,49 +6,63 @@ use App\Models\UserModel;
 
 class Login extends BaseController
 {
-    protected $userModel;
-
-    public function __construct()
-    {
-        $this->userModel = new UserModel();
-    }
-
+    // Tampilkan halaman login
     public function index()
     {
-        return view('login'); // Pastikan nama file view login sesuai
+        $session = session();
+
+        // Cek apakah user sudah login
+        if ($session->get('logged_in')) {
+            // Kalau sudah login, tampilkan view khusus
+            $data = [
+                'nama_lengkap' => $session->get('nama_lengkap'),
+                'username' => $session->get('username'),
+            ];
+            return view('sudah_login', $data);
+        }
+
+        // Kalau belum login, tampilkan form login
+        return view('login');
     }
 
+    // Proses login (auth)
     public function auth()
     {
+        $session = session();
+        $userModel = new UserModel();
+
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        // Cari user di DB
-        $user = $this->userModel->where('username', $username)->first();
+        // Cari user berdasarkan username
+        $user = $userModel->where('username', $username)->first();
 
-        if ($user) {
-            // Cek password
-            if (password_verify($password, $user['password'])) {
-                // Simpan session
-                session()->set([
-                    'id_user' => $user['id'],
-                    'username' => $user['username'],
-                    'nama_lengkap' => $user['nama_lengkap'],
-                    'logged_in' => true
-                ]);
-
-                return redirect()->to('/home')->with('success', 'Login berhasil.');
-            } else {
-                return redirect()->back()->with('error', 'Password salah.');
-            }
-        } else {
-            return redirect()->back()->with('error', 'Username tidak ditemukan.');
+        if (!$user) {
+            // Jika username tidak ditemukan
+            return redirect()->back()->with('error', 'Akun belum terdaftar! Silahkan daftar dulu');
         }
+
+        if (!password_verify($password, $user['password'])) {
+            // Jika password salah
+            return redirect()->back()->with('error', 'Password salah.');
+        }
+
+        // Jika username & password benar
+        $sessionData = [
+            'id_user'      => $user['id_user'],
+            'nama_lengkap' => $user['nama_lengkap'],
+            'username'     => $user['username'],
+            'logged_in'    => TRUE
+        ];
+        $session->set($sessionData);
+
+        return redirect()->to('/home');
     }
 
+    // Logout: hapus session
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login')->with('success', 'Berhasil logout.');
+        return redirect()->to('/login');
     }
 }

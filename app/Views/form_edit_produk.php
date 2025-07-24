@@ -30,17 +30,17 @@
     </nav>
 
     <!-- konten utama -->
-    <section class="py-5 mt-5">
+    <section class="py-5 mt-4">
         <div class="container">
             <!-- header -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
                 <h2>Form Edit Produk</h2>
             </div>
 
             
 
             <!-- form tambah produk -->
-            <div class="container mt-5">
+            <div class="container mt-1">
                 <div class="mx-auto" style="max-width: 600px;">
                     <form action="<?= base_url('produk/update/' .$produk['id_produk'] ) ?>" method="post">
                         <div class="mb-3">

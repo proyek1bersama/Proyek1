@@ -23,7 +23,6 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAdmin">
                 <ul class="navbar-nav text-end">
                     <li class="nav-item"><a class="nav-link active" href="<?= base_url('admin') ?>">Dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?= base_url('produk') ?>">Kelola Produk</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?= base_url('logout') ?>"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
                 </ul>
             </div>
@@ -79,7 +78,7 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary">Simpan Produk</button>
+                            <button type="submit" class="btn btn-light">Simpan Produk</button>
                         </div>
                     </form>
                 </div>

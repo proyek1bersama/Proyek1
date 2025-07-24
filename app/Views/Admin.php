@@ -63,8 +63,8 @@
                                     <td><?= esc($item['stok_produk']) ?></td>
                                     <td><?= esc($item['deskripsi']) ?></td>
                                     <td class="text-center">
-                                        <a href="<?= base_url('produk/edit/' . $item['id_produk']) ?>" class="btn btn-sm btn-warning">Edit</a>
-                                        <a href="<?= base_url('produk/delete/' . $item['id_produk']) ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</a>
+                                        <a href="<?= base_url('produk/edit/' . $item['id_produk']) ?>" class="btn btn-sm btn-outline-dark">Edit</a>
+                                        <a href="<?= base_url('produk/delete/' . $item['id_produk']) ?>" class="btn btn-sm btn-outline-dark" onclick="return confirm('Yakin ingin menghapus produk ini?')">Hapus</a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>
@@ -116,7 +116,7 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary">Simpan Produk</button>
+                            <button type="submit" class="btn btn-light">Simpan Produk</button>
                         </div>
                     </form>
                 </div>

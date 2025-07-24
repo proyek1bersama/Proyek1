@@ -19,6 +19,6 @@ class Admin extends BaseController
         $data['produk'] = $produkModel->findAll();
 
         // kirim ke view 'Admin'
-        return view('Admin', $data);
+        return view('admin', $data);
     }
 }

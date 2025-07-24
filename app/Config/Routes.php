@@ -29,7 +29,7 @@ $routes->get('tri', 'Produk::tri');
 $routes->get('telkomsel', 'Produk::telkomsel');
 
 
-$routes->get('/Admin', 'Admin::index');
+$routes->get('/admin', 'admin::index');
 
 // CRUD Produk (hanya untuk admin)
 $routes->get('produk', 'Produk::index');               // tampil semua produk

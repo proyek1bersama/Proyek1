@@ -60,7 +60,7 @@ class Produk extends BaseController
 
     $produkModel->insert($data);
 
-    return redirect()->to('/Admin'); // balik ke halaman produk
+    return redirect()->to('/admin'); // balik ke halaman produk
     }
 
     public function update($id)
@@ -75,7 +75,7 @@ class Produk extends BaseController
         ];
 
         $Model->update($id,$data);
-    return redirect()->to('/Admin'); // balik ke halaman produk
+    return redirect()->to('/admin'); // balik ke halaman produk
     }
     
 
@@ -84,7 +84,7 @@ class Produk extends BaseController
         $Model = new ProdukModel();    
         $Model->delete($id);
 
-    return redirect()->to('/Admin'); // balik ke halaman produk
+    return redirect()->to('/admin'); // balik ke halaman produk
     }
 
     public function tampilanedit($id)

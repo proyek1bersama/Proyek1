@@ -42,6 +42,8 @@ class Login extends BaseController
             return redirect()->back()->with('error', 'Akun belum terdaftar! Silahkan daftar dulu');
         }
 
+
+
         if (!password_verify($password, $user['password'])) {
             // Jika password salah
             return redirect()->back()->with('error', 'Password salah.');
@@ -52,11 +54,17 @@ class Login extends BaseController
             'id_user'      => $user['id_user'],
             'nama_lengkap' => $user['nama_lengkap'],
             'username'     => $user['username'],
+            'role'         => $user['role'], 
             'logged_in'    => TRUE
         ];
         $session->set($sessionData);
 
-        return redirect()->to('/home');
+        // arahkan sesuai role
+        if ($user['role'] == 'admin') {
+            return redirect()->to('/admin');
+        } else {
+            return redirect()->to('/home');
+        }
     }
 
     // Logout: hapus session

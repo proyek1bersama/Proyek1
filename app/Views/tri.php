@@ -165,17 +165,19 @@
     <h2 class="mb-4 fw-semibold text-white">Daftar Voucher Tri</h2>
     <div class="row">
 
+    <?php foreach ($produk as $data): ?> 
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
-            <img src="images/logo tri.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">Tri 10.000</h5>
+            <img src="images/logo tri.png" alt="Logo tri" class="logo-layanan mb-3" />
+            <h5 class="card-title"><?$data ['provider']?> <?$data ['nama_produk']?></h5>
             <p class="card-text">Kuota 2GB, masa aktif 1 hari.</p>
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>
       </div>
-
+    <?php endforeach?>
+<!-- 
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
@@ -299,9 +301,7 @@
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>
-      </div>
-
-
+      </div> -->
 
     </div>
   </div>

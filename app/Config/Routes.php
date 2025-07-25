@@ -21,12 +21,12 @@ $routes->post('register/save', 'Register::save');
 $routes->get('keranjang', 'Keranjang::index');
 
 
-$routes->get('xl', 'Produk::xl');
-$routes->get('axis', 'Produk::axis');
-$routes->get('indosat', 'Produk::indosat');
-$routes->get('smartfren', 'Produk::smartfren');
-$routes->get('tri', 'Produk::tri');
-$routes->get('telkomsel', 'Produk::telkomsel');
+$routes->get('xl', 'Produk::XL');
+$routes->get('axis', 'Produk::Axis');
+$routes->get('indosat', 'Produk::Indosat');
+$routes->get('smartfren', 'Produk::Smartfren');
+$routes->get('tri', 'Produk::Tri');
+$routes->get('telkomsel', 'Produk::Telkomsel');
 
 
 $routes->get('/admin', 'admin::index');

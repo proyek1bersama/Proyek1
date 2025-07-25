@@ -170,8 +170,8 @@
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
              <img src="images/logo smartfren.png" alt="Logo smartfren" class="logo-layanan mb-3" />
-            <h5 class="card-title"><?$data ['provider']?> <?$data ['nama_produk']?></h5>
-            <p class="card-text">Kuota 1 GB, masa aktif 3 hari.</p>
+            <h5 class="card-title"><?= $data ['provider']?> <?= $data ['nama_produk']?></h5>
+            <p class="card-text"><?= $data ['deskripsi']?></p>
             <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
           </div>
         </div>

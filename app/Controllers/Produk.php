@@ -11,38 +11,38 @@ class Produk extends BaseController
     public function axis()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','axis')->findAll();
+        $data ['produk'] = $model -> where ('provider','Axis')->findAll();
         return view('axis', $data);
     }
     public function xl()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','xl')->findAll();
+        $data ['produk'] = $model -> where ('provider','XL')->findAll();
         return view('xl', $data);
     }
     public function indosat()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','indosat')->findAll();
+        $data ['produk'] = $model -> where ('provider','Indosat')->findAll();
         return view('indosat', $data);
     }
     public function smartfren()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','smartfren')->findAll();
+        $data ['produk'] = $model -> where ('provider','Smartfren')->findAll();
         return view('smartfren', $data);
     }
     public function tri()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','tri')->findAll();
+        $data ['produk'] = $model -> where ('provider','Tri')->findAll();
         return view('tri', $data);
     
     }
     public function telkomsel()
     {
         $model = new ProdukModel();
-        $data ['produk'] = $model -> where ('provider','telkomsel')->findAll();
+        $data ['produk'] = $model -> where ('provider','Telkomsel')->findAll();
         return view('telkomsel', $data);
     }
 

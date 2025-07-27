@@ -60,17 +60,17 @@
     <div id="sliderCreativeCell" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
       <div class="carousel-inner">
         <div class="carousel-item active">
-  <img src="<?= base_url('images/ket1.jpg') ?>" class="d-block w-100" alt="Promo 1">
-</div>
-<div class="carousel-item">
-  <img src="<?= base_url('images/ket2.jpg') ?>" class="d-block w-100" alt="Promo 2">
-</div>
-<div class="carousel-item">
-  <img src="<?= base_url('images/ket3.jpg') ?>" class="d-block w-100" alt="Promo 3">
-</div>
-<div class="carousel-item">
-  <img src="<?= base_url('images/ket4.jpg') ?>" class="d-block w-100" alt="Promo 4">
-</div>
+          <img src="<?= base_url('images/ket1.jpg') ?>" class="d-block w-100" alt="Promo 1">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('images/ket2.jpg') ?>" class="d-block w-100" alt="Promo 2">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('images/ket3.jpg') ?>" class="d-block w-100" alt="Promo 3">
+        </div>
+        <div class="carousel-item">
+          <img src="<?= base_url('images/ket4.jpg') ?>" class="d-block w-100" alt="Promo 4">
+        </div>
 
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#sliderCreativeCell" data-bs-slide="prev">
@@ -87,12 +87,12 @@
       <h2 class="text-center mb-5">Layanan Kami</h2>
       <div class="row">
         <div class="col-md-4 d-flex align-items-center justify-content-center mb-4 mb-md-0 animate-left">
-         <img src="<?= base_url('images/endul.png') ?>" alt="Ilustrasi Layanan" class="custom-image img-fluid">
+          <img src="<?= base_url('images/endul.png') ?>" alt="Ilustrasi Layanan" class="custom-image img-fluid">
         </div>
         <div class="col-md-8 animate-right">
           <div class="row">
             <div class="col-md-6 mb-4">
-              <a href="<?= base_url(  'xl') ?>" class="text-decoration-none text-dark">
+              <a href="<?= base_url('xl') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo xl.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
@@ -103,7 +103,7 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-             <a href="<?= base_url('axis') ?>" class="text-decoration-none text-dark">
+              <a href="<?= base_url('axis') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo axis.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
@@ -114,7 +114,7 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-             <a href="<?= base_url('indosat') ?>" class="text-decoration-none text-dark">
+              <a href="<?= base_url('indosat') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo indosat.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
@@ -125,7 +125,7 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-                <a href="<?= base_url('smartfren') ?>" class="text-decoration-none text-dark">  
+              <a href="<?= base_url('smartfren') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo smartfren.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
@@ -147,7 +147,7 @@
               </a>
             </div>
             <div class="col-md-6 mb-4">
-                <a href="<?= base_url('telkomsel') ?>" class="text-decoration-none text-dark">
+              <a href="<?= base_url('telkomsel') ?>" class="text-decoration-none text-dark">
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo telkom.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
@@ -159,7 +159,7 @@
             </div>
   </section>
 
- <section id="kontak" class="py-5">
+  <section id="kontak" class="py-5">
     <div class="container">
       <h2 class="text-center mb-4">Hubungi Kami</h2>
       <div class="row">
@@ -189,13 +189,13 @@
   <!-- footer -->
   <footer class="text-center py-3">
     <p>&copy; 2023 Creative Cell. All rights reserved.</p>
-     <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
+    <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
   </footer>
 
   <!-- script -->
   <script>
     // active nav saat scroll
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", function() {
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll(".nav-link");
       let currentSection = "";
@@ -217,7 +217,7 @@
     });
 
     // animasi scroll
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       const observerOptions = {
         root: null,
         rootMargin: "0px",
@@ -257,8 +257,9 @@
               kontakElements.forEach((el) => el.classList.remove("kontak-show"));
             }
           });
-        },
-        { threshold: 0.2 }
+        }, {
+          threshold: 0.2
+        }
       );
 
       kontakObserver.observe(document.getElementById("kontak"));

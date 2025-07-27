@@ -37,9 +37,7 @@
                 <h2>Form Edit Produk</h2>
             </div>
 
-            
-
-            <!-- form tambah produk -->
+            <!-- form edit produk -->
             <div class="container mt-1">
                 <div class="mx-auto" style="max-width: 600px;">
                     <form action="<?= base_url('produk/update/' .$produk['id_produk'] ) ?>" method="post">

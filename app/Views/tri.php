@@ -146,11 +146,6 @@
             <a class="nav-link" href="<?= base_url() ?>#layanan">Layanan</a>
           </li>
           <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
-              <i class="bi bi-cart3 fs-5"></i>
-            </a>
-          </li>
-          <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
               <i class="bi bi-person-circle fs-5"></i>
             </a>
@@ -172,7 +167,7 @@
             <img src="images/logo tri.png" alt="Logo tri" class="logo-layanan mb-3" />
             <h5 class="card-title"><?= $data ['provider']?> <?= $data ['nama_produk']?></h5>
             <p class="card-text"><?= $data ['deskripsi']?></p>
-            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
+            <a href="<?= base_url('form?id_voucher='. $data['id_produk'])?>" class="btn btn-tambah">Beli Voucher</a>
           </div>
         </div>
       </div>
@@ -311,28 +306,6 @@
     <p>&copy; 2023 Creative Cell. All rights reserved.</p>
      <p>📍Jl. Sarikaso III No.3, Sarijadi, Kec. Sukasari, Kota Bandung, Jawa Barat 40151</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.btn-tambah').forEach(button => {
-    button.addEventListener('click', function () {
-      const card = button.closest('.card');
-      const title = card.querySelector('.card-title').innerText;
-      const desc = card.querySelector('.card-text').innerText;
-      const image = card.querySelector('img').getAttribute('src');
-
-      // ambil keranjang dari localStorage
-      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
-
-      // tambahkan produk ke keranjang
-      keranjang.push({ title, desc, image });
-
-      // simpan ulang ke localStorage
-      localStorage.setItem('keranjang', JSON.stringify(keranjang));
-
-      alert('Produk berhasil ditambahkan ke keranjang!');
-    });
-  });
-</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

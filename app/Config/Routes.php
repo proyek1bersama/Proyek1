@@ -27,7 +27,9 @@ $routes->get('indosat', 'Produk::Indosat');
 $routes->get('smartfren', 'Produk::Smartfren');
 $routes->get('tri', 'Produk::Tri');
 $routes->get('telkomsel', 'Produk::Telkomsel');
-
+$routes->get('form', 'FormPesanan::form');
+$routes->post('pesan', 'FormPesanan::datapesanan');
+$routes->get('pesanan', 'FormPesanan::tampilantabel');
 
 $routes->get('/admin', 'admin::index');
 
@@ -39,4 +41,5 @@ $routes->get('produk/edit/(:num)', 'Produk::tampilanedit/$1'); // tampil form ed
 $routes->post('produk/update/(:num)', 'Produk::update/$1'); // proses update
 $routes->get('produk/delete/(:num)', 'Produk::delete/$1');    // hapus produk
 
-
+$routes->get('update/(:num)', 'FormPesanan::update/$1');
+$routes->get('delete/(:num)', 'FormPesanan::delete/$1');

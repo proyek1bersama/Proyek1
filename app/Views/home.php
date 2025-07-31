@@ -24,8 +24,6 @@
         <ul class="navbar-nav text-end">
           <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
           <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
-          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-          <li class="nav-item"><a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang"><i class="bi bi-cart3 fs-5"></i></a></li>
           <li class="nav-item"><a class="nav-link" href="<?= base_url('login') ?>" title="Login"><i class="bi bi-person-circle fs-5"></i></a></li>
         </ul>
       </div>
@@ -157,33 +155,6 @@
                 </div>
               </a>
             </div>
-  </section>
-
-  <section id="kontak" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Hubungi Kami</h2>
-      <div class="row">
-        <div class="col-md-6 mx-auto">
-          <form>
-            <div class="mb-3 kontak-slide-left" id="anim-nama">
-              <label for="nama" class="form-label">Nama</label>
-              <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-right" id="anim-email">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="Masukkan Email Anda" />
-            </div>
-            <div class="mb-3 kontak-slide-left" id="anim-pesan">
-              <label for="pesan" class="form-label">Pesan</label>
-              <textarea class="form-control" id="pesan" rows="3" placeholder="Tulis Pesan Anda..."></textarea>
-            </div>
-            <div class="d-flex justify-content-center kontak-slide-right" id="anim-button">
-              <button type="submit" class="btn btn-primary">Kirim</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- footer -->

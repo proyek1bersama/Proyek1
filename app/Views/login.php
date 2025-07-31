@@ -145,11 +145,6 @@
               <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
-                <i class="bi bi-cart3 fs-5"></i>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
                 <i class="bi bi-person-circle fs-5"></i>
               </a>
@@ -184,8 +179,6 @@
             <button type="submit" class="btn btn-primary">Masuk</button>
           </div>
         </form>
-
-        <p class="text-center mt-3">Belum punya akun? <a href="<?= base_url('register') ?>">Daftar dulu</a></p>
       </div>
     </main>
 

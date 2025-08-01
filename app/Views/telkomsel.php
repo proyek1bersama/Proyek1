@@ -160,7 +160,8 @@
     <h2 class="mb-4 fw-semibold text-white">Daftar Voucher Telkomsel</h2>
     <div class="row">
       
-    <?php foreach ($produk as $data): ?> 
+    <?php foreach ($produk as $data):
+      if($data ['stok_produk'] > 0): ?> 
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">
           <div class="card-body">
@@ -171,7 +172,7 @@
           </div>
         </div>
       </div>
-    <?php endforeach?>
+    <?php endif;endforeach?>
 <!-- 
       <div class="col-md-4 mb-4">
         <div class="card shadow-sm card-voucher h-100 text-center">

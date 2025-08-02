@@ -40,39 +40,39 @@
             <!-- form edit produk -->
             <div class="container mt-1">
                 <div class="mx-auto" style="max-width: 600px;">
-                    <form action="<?= base_url('produk/update/' .$produk['id_produk'] ) ?>" method="post">
+                    <form action="<?= base_url('produk/update/' . $produk['id_produk']) ?>" method="post">
                         <div class="mb-3">
                             <label for="nama_produk" class="form-label">Nama Produk</label>
-                            <input type="text" name="nama_produk" id="nama_produk" class="form-control" value ="<?= esc($produk ['nama_produk']) ?>"required>
+                            <input type="text" name="nama_produk" id="nama_produk" class="form-control" value="<?= esc($produk['nama_produk']) ?>" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="harga_produk" class="form-label">Harga Produk</label>
-                            <input type="number" name="harga_produk" id="harga_produk" class="form-control" value ="<?= esc($produk ['harga_produk']) ?>"required>
+                            <input type="number" name="harga_produk" id="harga_produk" class="form-control" value="<?= esc($produk['harga_produk']) ?>" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="stok_produk" class="form-label">Stok Produk</label>
-                            <input type="number" name="stok_produk" id="stok_produk" class="form-control" value ="<?= esc($produk ['stok_produk']) ?>"required>
+                            <input type="number" name="stok_produk" id="stok_produk" class="form-control" value="<?= esc($produk['stok_produk']) ?>" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="provider" class="form-label">Provider</label>
                             <select name="provider" id="provider" class="form-select" required>
                                 <option value="">-- Pilih Provider --</option>
-                                <option value="Telkomsel">Telkomsel</option>
-                                <option value="XL">XL</option>
-                                <option value="Axis">Axis</option>
-                                <option value="Tri">Tri</option>
-                                <option value="Indosat">Indosat</option>
-                                <option value="Smartfren">Smartfren</option>
+                                <option value="Telkomsel" <?= ($produk['provider'] == 'Telkomsel') ? 'selected' : '' ?>>Telkomsel</option>
+                                <option value="XL" <?= ($produk['provider'] == 'XL') ? 'selected' : '' ?>>XL</option>
+                                <option value="Axis" <?= ($produk['provider'] == 'Axis') ? 'selected' : '' ?>>Axis</option>
+                                <option value="Tri" <?= ($produk['provider'] == 'Tri') ? 'selected' : '' ?>>Tri</option>
+                                <option value="Indosat" <?= ($produk['provider'] == 'Indosat') ? 'selected' : '' ?>>Indosat</option>
+                                <option value="Smartfren" <?= ($produk['provider'] == 'Smartfren') ? 'selected' : '' ?>>Smartfren</option>
                             </select>
+
                         </div>
 
                         <div class="mb-3">
                             <label for="deskripsi" class="form-label">Deskripsi Produk</label>
-                            <textarea name="deskripsi" id="deskripsi" class="form-control" rows="3" value ="<?= esc($produk ['deskripsi']) ?>"></textarea>
-    
+                            <textarea name="deskripsi" id="deskripsi" class="form-control" rows="3"><?= esc($produk['deskripsi']) ?></textarea>
                         </div>
 
                         <div class="text-end">

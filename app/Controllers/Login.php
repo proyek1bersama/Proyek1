@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\ProdukModel;
 
 class Login extends BaseController
 {
@@ -13,16 +14,25 @@ class Login extends BaseController
 
         // Cek apakah user sudah login
         if ($session->get('logged_in')) {
-            // Kalau sudah login, tampilkan view khusus
-            $data = [
-                'nama_lengkap' => $session->get('nama_lengkap'),
-                'username' => $session->get('username'),
-            ];
-            return view('sudah_login', $data);
+            return redirect()->to('/admin');
         }
 
         // Kalau belum login, tampilkan form login
         return view('login');
+    }
+
+    public function admin()
+    {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/login');
+        }
+
+        $produkModel = new ProdukModel();
+        $data['produk'] = $produkModel->findAll();
+
+        // kirim ke view 'Admin'
+        return view('admin', $data);
     }
 
     // Proses login (auth)
@@ -36,35 +46,25 @@ class Login extends BaseController
 
         // Cari user berdasarkan username
         $user = $userModel->where('username', $username)->first();
+        $password = $userModel->where('password', $password)->first();
 
-        if (!$user) {
+        if (!$user && !$password) {
             // Jika username tidak ditemukan
-            return redirect()->back()->with('error', 'Akun belum terdaftar! Silahkan daftar dulu');
-        }
-
-
-
-        if (!password_verify($password, $user['password'])) {
-            // Jika password salah
-            return redirect()->back()->with('error', 'Password salah.');
+            return redirect()->back()->with('error', 'Username atau Password Salah!');
         }
 
         // Jika username & password benar
         $sessionData = [
             'id_user'      => $user['id_user'],
-            'nama_lengkap' => $user['nama_lengkap'],
             'username'     => $user['username'],
-            'role'         => $user['role'], 
             'logged_in'    => TRUE
         ];
         $session->set($sessionData);
 
-        // arahkan sesuai role
-        if ($user['role'] == 'admin') {
-            return redirect()->to('/admin');
-        } else {
-            return redirect()->to('/home');
-        }
+        $produkModel = new ProdukModel();
+        $data['produk'] = $produkModel->findAll();
+
+        return view('admin', $data);
     }
 
     // Logout: hapus session

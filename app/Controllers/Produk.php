@@ -8,6 +8,11 @@ use App\Models\ProdukModel;
 
 class Produk extends BaseController
 {
+    public function index()
+    {
+        return view('home');
+    }
+
     public function axis()
     {
         $model = new ProdukModel();

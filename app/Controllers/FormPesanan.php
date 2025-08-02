@@ -43,7 +43,7 @@ class FormPesanan extends BaseController
                 //Proses input data ke dalam tabel
                 $PesananModel->insert($data);
 
-                return redirect()->to('/home')->with('success', 'Pesanan berhasil!');
+                return redirect()->to('/')->with('success', 'Pesanan berhasil!');
         } else {
             return redirect()->back()->with('error', 'Produk tidak ditemukan!');
         }

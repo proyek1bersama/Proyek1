@@ -173,39 +173,6 @@
         </div>
       </div>
     <?php endif;endforeach?>
-<!-- 
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm card-voucher h-100 text-center">
-          <div class="card-body">
-            <img src="images/logo telkom.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">Telkomsel 10.000</h5>
-            <p class="card-text">Kuota 1GB, masa aktif 7 hari.</p>
-            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm card-voucher h-100 text-center">
-          <div class="card-body">
-            <img src="images/logo telkom.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">Telkomsel 25.000</h5>
-            <p class="card-text">Kuota 3GB, masa aktif 15 hari.</p>
-            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card shadow-sm card-voucher h-100 text-center">
-          <div class="card-body">
-            <img src="images/logo telkom.png" alt="Logo XL" class="logo-layanan mb-3" />
-            <h5 class="card-title">Telkomsel 50.000</h5>
-            <p class="card-text">Kuota 7GB, masa aktif 30 hari.</p>
-            <a href="#" class="btn btn-tambah">Tambahkan ke keranjang</a>
-          </div>
-        </div>
-      </div> -->
 
     </div>
   </div>

@@ -11,8 +11,10 @@ $routes->get('/home', 'Produk::index');
 
 $routes->get('login', 'Login::index');
 $routes->post('login/auth', 'Login::auth');
-$routes->get('/admin', 'Login::admin');
+$routes->get('/admin', 'admin::index');
 $routes->get('logout', 'Login::logout');
+$routes->get('register', 'Register::index');
+$routes->post('register/save', 'Register::save');
 
 $routes->get('xl', 'Produk::XL');
 $routes->get('axis', 'Produk::Axis');

@@ -59,7 +59,7 @@
                             foreach ($produk as $item) : ?>
                                 <tr>
                                     <td class="text-center"><?= $no++ ?></td>
-                                    <td><?= esc($item['nama']) ?></td>
+                                    <td><?= esc($item['id_user']) ?></td>
                                     <td><?= esc($item['nomor_telepon']) ?></td>
                                     <td><?= esc($item['nama_produk']) ?></td>
                                     <td><?= esc($item['status_pesanan']) ?></td>

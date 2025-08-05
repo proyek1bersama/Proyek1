@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Login - Creative Cell</title>
+  <title>Register - Creative Cell</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
   <style>
     body {
@@ -87,20 +87,20 @@
       padding: 30px;
       border-radius: 15px;
       width: 100%;
-      max-width: 400px;
+      max-width: 450px;
     }
 
     .form-control {
       background-color: rgba(255, 255, 255, 0.2);
       border: none;
-      color: rgb(0, 0, 0);
+      color: white;
     }
 
     .form-control::placeholder {
       color: rgba(0, 0, 0, 0.7);
     }
 
-    .btn-primary {
+    .btn-success {
       background-color: #fff;
       color: #000;
       font-weight: bold;
@@ -108,10 +108,10 @@
       transition: all 0.3s ease;
     }
 
-    .btn-primary:hover {
+    .btn-success:hover {
       background-color: transparent;
-      border: 2px solid #fff;
       color: #fff;
+      border: 2px solid #fff;
     }
 
     .text-center a {
@@ -129,7 +129,8 @@
 </head>
 
 <body>
-  <div class="d-flex flex-column min-vh-100">
+  <div class="page-wrapper d-flex flex-column min-vh-100">
+
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top shadow-sm">
       <div class="container-fluid px-4">
@@ -142,10 +143,15 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav text-end">
             <li class="nav-item">
-              <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
+                   <a class="nav-link active" href="<?= base_url('home') ?>">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
+               <a class="nav-link" href="<?= base_url('keranjang') ?>" title="Keranjang">
+                <i class="bi bi-cart3 fs-5"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url('login') ?>" title="Login">
                 <i class="bi bi-person-circle fs-5"></i>
               </a>
             </li>
@@ -154,34 +160,34 @@
       </div>
     </nav>
 
-    <!-- konten -->
+    <!-- konten utama -->
     <main class="flex-grow-1 d-flex justify-content-center align-items-center mt-5 pt-4">
       <div class="form-container">
-        <h2 class="text-center mb-4">Login</h2>
-
-        <!-- ✅ ALERT ERROR DITAMBAHKAN DI SINI -->
-        <?php if (session()->getFlashdata('error')) : ?>
-          <div class="alert alert-danger">
-            <?= session()->getFlashdata('error') ?>
+        <h2 class="text-center mb-4">Daftar Akun</h2>
+        <form action="/register/save" method="post">
+          <div class="mb-3">
+            <input type="text" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required />
           </div>
-        <?php endif; ?>
-
-        <form action="/login/auth" method="post">
           <div class="mb-3">
             <input type="text" name="username" class="form-control" placeholder="Username" required />
           </div>
           <div class="mb-3 position-relative">
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
-            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3" id="togglePassword"
-              style="cursor: pointer; color: rgb(0, 0, 0);"></i>
+            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
+              style="cursor: pointer; color: rgb(0, 0, 0);" data-target="password"></i>
+          </div>
+          <div class="mb-3 position-relative">
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control"
+              placeholder="Confirm Password" required />
+            <i class="bi bi-eye-slash position-absolute top-50 end-0 translate-middle-y me-3 toggle-password"
+              style="cursor: pointer; color: rgb(0, 0, 0);" data-target="confirm_password"></i>
           </div>
           <div class="d-grid">
-            <button type="submit" class="btn btn-primary">Masuk</button>
+            <button type="submit" class="btn btn-success">Daftar</button>
           </div>
         </form>
-
-        <p class="text-center mt-3">Belum punya akun? <a href="<?= base_url('register') ?>">Daftar dulu</a></p>
-      </div>
+        <p class="text-center mt-3">Sudah punya akun? <a href="<?= base_url('login') ?>">Login di sini</a></p>
+  </div>
     </main>
 
     <!-- footer -->
@@ -191,16 +197,16 @@
     </footer>
   </div>
 
-  <!-- script toggle password -->
   <script>
-    const togglePassword = document.querySelector('#togglePassword');
-    const password = document.querySelector('#password');
-
-    togglePassword.addEventListener('click', function () {
-      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-      password.setAttribute('type', type);
-      this.classList.toggle('bi-eye');
-      this.classList.toggle('bi-eye-slash');
+    document.querySelectorAll('.toggle-password').forEach(function (icon) {
+      icon.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-target');
+        const target = document.getElementById(targetId);
+        const type = target.getAttribute('type') === 'password' ? 'text' : 'password';
+        target.setAttribute('type', type);
+        this.classList.toggle('bi-eye');
+        this.classList.toggle('bi-eye-slash');
+      });
     });
   </script>
 

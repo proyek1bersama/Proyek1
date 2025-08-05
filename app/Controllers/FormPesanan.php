@@ -17,37 +17,31 @@ class FormPesanan extends BaseController
 
     public function datapesanan()
     {
-        // Membuat Objek dari tabel yang akan digunakan ketika proses input data pesanan
         $PesananModel = new PesananModel();
         $ProdukModel = new ProdukModel();
 
-        // Menangkap nilai id_produk berdasarkan "name" dari "input" view form_pesanan
-        $id_produk = $this->request->getPost('id_produk');
+        $session = session();
+        $id_user = $session->get('id_user'); // ✅ ambil dari session
 
-        // Mengambil 1 baris data yang memiliki id = $id_produk dari tabel produk, jadi disini menyimpan (id_produk, nama_produk, harga_produk, stok_produk, dibuat, diubah, provider, dan deskripsi)
+        $id_produk = $this->request->getPost('id_produk');
         $produk = $ProdukModel->find($id_produk);
 
-        //Pengecekkan apakah variabel $produk memiliki data atau tidak, kalau tidak langsung ke else
         if ($produk) {
-            //Pengecekkan apakah stok dari produk saat ini itu masih ada atau sudah habis, ini bisa diubah jadi apabila stoknya habis jadi ga perlu ditampilin produknya, itu nanti Zahra coba pikirin lagi
-                //Proses Update data stok produk yang berkurang satu, karena ini dubah, jadi Flowchart juga tambahin ketika tambah data pesanan itu ada proses lainnya, yaitu stok produknya berkurang
+            $data = [
+                'id_produk'      => $id_produk,
+                'id_user'        => $id_user,
+                'nomor_telepon'  => $this->request->getPost('nomor_telepon'),
+                'status_pesanan' => 'pending',
+            ];
 
-                //Membuat variabel yang akan menampung data untuk dimasukkan ke dalam tabel
-                $data = [
-                    'id_produk'      => $id_produk,
-                    'nama'           => $this->request->getPost('nama'),
-                    'nomor_telepon'  => $this->request->getPost('nomor_telepon'),
-                    'status_pesanan' => 'pending',
-                ];
+            $PesananModel->insert($data);
 
-                //Proses input data ke dalam tabel
-                $PesananModel->insert($data);
-
-                return redirect()->to('/')->with('success', 'Pesanan berhasil!');
+            return redirect()->to('/')->with('success', 'Pesanan berhasil!');
         } else {
             return redirect()->back()->with('error', 'Produk tidak ditemukan!');
         }
     }
+
 
     public function tampilantabel()
     {
@@ -77,9 +71,12 @@ class FormPesanan extends BaseController
             'status_pesanan' => 'selesai'
         ]);
 
-        $ProdukModel-> update($produk ['id_produk'],
-        ['stok_produk'=> $produk['stok_produk'] -1
-        ]);
+        $ProdukModel->update(
+            $produk['id_produk'],
+            [
+                'stok_produk' => $produk['stok_produk'] - 1
+            ]
+        );
         return redirect()->to('/pesanan'); // balik ke halaman pesanan
     }
 }

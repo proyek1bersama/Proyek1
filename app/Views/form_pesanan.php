@@ -50,8 +50,6 @@
                     <form action="<?= base_url('pesan') ?>" method="post">
                         <div class="mb-3">
                             <input type="hidden" name="id_produk" value="<?= esc($id_voucher) ?>">
-                            <label for="nama" class="form-label">Nama</label>
-                            <input type="text" name="nama" class="form-control"required>
                             <label for="nama_produk" class="form-label">Nomor Telepon</label>
                             <input type="text" name="nomor_telepon" class="form-control"required>
                         </div>

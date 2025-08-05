@@ -10,7 +10,7 @@ class PesananModel extends Model
     protected $primaryKey       = 'id_pesanan';
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
-    protected $allowedFields    = ['id_produk','nama','nomor_telepon', 'status_pesanan'];
+    protected $allowedFields    = ['id_produk','id_user','nomor_telepon', 'status_pesanan'];
 
     // Dates
     protected $useTimestamps = true;

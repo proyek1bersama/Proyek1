@@ -11,18 +11,27 @@ class FormPesanan extends BaseController
 {
     public function form()
     {
+        // cek apakah user sudah login
+        if (!session()->get('logged_in')) {
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu sebelum membeli.');
+        }
         $produk = $this->request->getGet('id_voucher');
         return view('form_pesanan', ['id_voucher' => $produk]);
     }
 
     public function datapesanan()
     {
+        $session = session();
+
+        // cek login
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/login')->with('error', 'Silakan login terlebih dahulu sebelum melakukan pembelian.');
+        }
+
         $PesananModel = new PesananModel();
         $ProdukModel = new ProdukModel();
 
-        $session = session();
         $id_user = $session->get('id_user'); // ✅ ambil dari session
-
         $id_produk = $this->request->getPost('id_produk');
         $produk = $ProdukModel->find($id_produk);
 
@@ -41,6 +50,7 @@ class FormPesanan extends BaseController
             return redirect()->back()->with('error', 'Produk tidak ditemukan!');
         }
     }
+
 
 
     public function tampilantabel()

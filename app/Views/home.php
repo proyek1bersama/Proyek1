@@ -41,9 +41,9 @@
             <span style="color: black;">Creative Cell!</span>
           </h1>
           <p class="animate animate-from-bottom" style="color: white;">
-            Halo! 👋👋👋 <br> Di Creative Cell, kamu bisa beli berbagai jenis voucher digital dengan cara yang cepat,
-            gampang, dan aman. Semua tersedia online, jadi kamu tinggal pilih voucher yang kamu butuhin, bayar, dan
-            beres deh! Biar makin praktis, beli voucher sekarang nggak perlu ribet lagi.
+            Halo! 👋👋👋 <br> Di Creative Cell, kamu bisa beli berbagai jenis paket data dengan cara yang cepat,
+            gampang, dan aman. Semua tersedia online, jadi kamu tinggal pilih paket data yang kamu butuhin, bayar, dan
+            beres deh! Biar makin praktis, beli paket data sekarang nggak perlu ribet lagi.
           </p>
         </div>
         <div class="col-md-4 text-center">
@@ -94,7 +94,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo xl.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher XL</h5>
+                    <h5 class="card-title">Paket Data XL</h5>
                     <p class="card-text">Kuota Stabil & Jaringan Luas.</p>
                   </div>
                 </div>
@@ -105,7 +105,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo axis.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Axis</h5>
+                    <h5 class="card-title">Paket Data Axis</h5>
                     <p class="card-text">Paket Internet & Nelpon Murah.</p>
                   </div>
                 </div>
@@ -116,7 +116,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo indosat.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Indosat</h5>
+                    <h5 class="card-title">Paket Data Indosat</h5>
                     <p class="card-text">Paket Internet & Nelpon Lengkap.</p>
                   </div>
                 </div>
@@ -127,7 +127,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo smartfren.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Smartfren</h5>
+                    <h5 class="card-title">Paket Data Smartfren</h5>
                     <p class="card-text">Internet Stabil & Harga Bersahabat.</p>
                   </div>
                 </div>
@@ -138,7 +138,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo tri.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Tri</h5>
+                    <h5 class="card-title">Paket Data Tri</h5>
                     <p class="card-text">Kuota Melimpah & Jaringan Anak Muda.</p>
                   </div>
                 </div>
@@ -149,7 +149,7 @@
                 <div class="card shadow-sm h-100">
                   <div class="card-body text-center">
                     <img src="<?= base_url('images/logo telkom.png') ?>" alt="Logo Smartfren" class="mb-3 logo-layanan">
-                    <h5 class="card-title">Voucher Telkomsel</h5>
+                    <h5 class="card-title">Paket Data Telkomsel</h5>
                     <p class="card-text">Sinyal Kuat & Akses Cepat di Mana Saja.</p>
                   </div>
                 </div>

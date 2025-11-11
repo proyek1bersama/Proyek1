@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Voucher XL - Creative Cell</title>
+  <title>Paket Data XL - Creative Cell</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
@@ -157,7 +157,7 @@
 
   <!-- konten -->
   <div class="container py-5 mt-5">
-    <h2 class="mb-4 fw-semibold text-white">Daftar Voucher XL</h2>
+    <h2 class="mb-4 fw-semibold text-white">Daftar Paket Data XL</h2>
     <div class="row">
 
       <?php foreach ($produk as $data): 
@@ -168,7 +168,7 @@
             <img src="images/logo xl.png" alt="Logo XL" class="logo-layanan mb-3" />
             <h5 class="card-title"><?= $data ['provider']?> <?= $data ['nama_produk']?></h5>
             <p class="card-text"><?= $data ['deskripsi']?></p>
-            <a href="<?= base_url('form?id_voucher='. $data['id_produk'])?>" class="btn btn-tambah">Beli Voucher</a>
+            <a href="<?= base_url('form?id_voucher='. $data['id_produk'])?>" class="btn btn-tambah">Beli Paket Data</a>
           </div>
         </div>
       </div>
